@@ -41,7 +41,12 @@ class App(customtkinter.CTk):
         self.btn_mostrar.grid(row=2, pady=20, columnspan=2, sticky="nsew")
 
     def btn_mostrar_on_click(self):
-        pass
+        importe = float(self.txt_importe.get())
+        porcentaje_descuento = float(self.txt_descuento.get())
+        calculo_descuento = (importe * porcentaje_descuento) / 100
+        importe_actualizado = importe - calculo_descuento
+
+        alert("nuevo importe", "su nuevo importe con su descuento aplicado es de {0}".format(importe_actualizado))
 
 
 if __name__ == "__main__":
