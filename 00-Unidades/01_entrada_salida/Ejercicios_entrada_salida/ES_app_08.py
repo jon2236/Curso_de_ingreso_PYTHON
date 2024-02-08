@@ -45,7 +45,7 @@ class App(customtkinter.CTk):
 
         resto_division = numero_1 % numero_2
 
-        alert("resultados", "el resultado de dividir {0} por {1} es {2}".format (numero_1, numero_2, resto_division))
+        alert("resultados", "el resultado de dividir {0} por {1} es {2}".format(numero_1, numero_2, resto_division))
     
 
         
