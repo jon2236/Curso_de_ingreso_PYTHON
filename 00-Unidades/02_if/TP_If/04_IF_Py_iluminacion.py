@@ -43,7 +43,57 @@ class App(customtkinter.CTk):
 
 
     def btn_calcular_on_click(self):
-        pass
+        marca = self.combobox_marca.get()
+        cantidad = int(self.combobox_cantidad.get())
+        precio_lampara = 800
+
+        descuento_del_50 = (precio_lampara * 50) / 100
+        resultado_descuento_50 = precio_lampara - descuento_del_50
+
+        descuento_del_40 = (precio_lampara * 40) / 100
+        resultado_descuento_40 = precio_lampara - descuento_del_40
+        
+        descuento_del_30 = (precio_lampara * 30) / 100
+        resultado_descuento_30 = precio_lampara - descuento_del_30
+        
+        descuento_del_25 = (precio_lampara * 25) / 100
+        resultado_descuento_25 = precio_lampara - descuento_del_25
+        
+        descuento_del_20 = (precio_lampara * 20) / 100
+        resultado_descuento_20 = precio_lampara - descuento_del_20
+        
+        descuento_del_15 = (precio_lampara * 15) / 100
+        resultado_descuento_15 = precio_lampara - descuento_del_15
+
+        descuento_del_10 = (precio_lampara * 10) / 100
+        resultado_descuento_10 = precio_lampara - descuento_del_10
+
+        descuento_del_5 = (precio_lampara * 5) / 100
+        resultado_descuento_5 = precio_lampara - descuento_del_5
+
+        if (cantidad >= 6):
+            alert("precio de cada lampara", "su pedido tiene un precio por lampara de {0} aplicando un descuento del 50%".format(resultado_descuento_50))
+
+        elif (cantidad == 5 and marca == "ArgentinaLuz"):
+            alert("precio de cada lampara", "su pedido tiene un precio por lampara de {0} aplicando un descuento del 40%".format(resultado_descuento_40))
+            if (cantidad == 5 and marca != "ArgentinaLuz"):
+                alert("precio de cada lampara", "su pedido tiene un precio por lampara de {0} aplicando un descuento del 30%".format(resultado_descuento_30))
+
+        elif (cantidad == 4 and marca == "ArgentinaLuz" or marca == "FelipeLamparas"):
+            alert("precio de cada lampara", "su pedido tiene un precio por lampara de {0} aplicando un descuento del 25%".format(resultado_descuento_25))
+            if (cantidad == 4 and marca != "ArgentinaLuz" or marca != "FelipeLamparas"):
+                 alert("precio de cada lampara", "su pedido tiene un precio por lampara de {0} aplicando un descuento del 20%".format(resultado_descuento_20))
+
+        elif(cantidad == 3 and marca == "ArgentinaLuz"):
+            alert("precio de cada lampara", "su pedido tiene un precio por lampara de {0} aplicando un descuento del 15%".format(resultado_descuento_15))
+            if(cantidad == 3 and marca == "FelipeLamparas"):
+                alert("precio de cada lampara", "su pedido tiene un precio por lampara de {0} aplicando un descuento del 10%".format(resultado_descuento_10))
+            else:
+                alert("precio de cada lampara", "su pedido tiene un precio por lampara de {0} aplicando un descuento del 5%".format(resultado_descuento_5))
+        
+        
+
+
         
     
 if __name__ == "__main__":

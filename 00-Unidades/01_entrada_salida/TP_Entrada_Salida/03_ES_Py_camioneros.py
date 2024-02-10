@@ -6,8 +6,8 @@ import customtkinter
 import math
 
 '''
-nombre:
-apellido:
+nombre: jonatan
+apellido: quiroga
 ---
 TP: ES_Camioneros
 ---
@@ -51,7 +51,7 @@ class App(customtkinter.CTk):
         self.btn_tiempo_llegada.grid(row=4, pady=10, padx=30, columnspan=2, sticky="nsew")
     
     def btn_cantidad_camiones_on_click(self):
-        toneladas = float(self.txt_toneladas.get())
+        toneladas = int(self.txt_toneladas.get())
         toneladas_kg = toneladas * 1000
         carga_camion = 3500
         camiones_requeridos = math.ceil(toneladas_kg / carga_camion)
