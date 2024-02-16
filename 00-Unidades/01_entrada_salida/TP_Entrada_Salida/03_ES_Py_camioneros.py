@@ -61,7 +61,6 @@ class App(customtkinter.CTk):
 
     def btn_tiempo_llegada_on_click(self):
         km = float(self.txt_kilometros.get())
-        velocidad_max = 90
         horas_viaje = km / 90
 
         alert("recorrido", "la cantidad de horas para llegara destino es {0}".format(horas_viaje))

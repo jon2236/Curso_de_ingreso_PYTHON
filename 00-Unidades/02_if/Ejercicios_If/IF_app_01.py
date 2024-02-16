@@ -39,7 +39,7 @@ class App(customtkinter.CTk):
             alert("mensaje", "usted tiene 18 años")
         
 
-         
+
 if __name__ == "__main__":
     app = App()
     app.geometry("300x300")
