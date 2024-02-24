@@ -5,13 +5,14 @@ from tkinter.simpledialog import askstring as prompt
 import customtkinter
 
 '''
-nombre:
-apellido:
+nombre:jonatan
+apellido:quiroga
 ---
 Ejercicio: while_08
 ---
 Enunciado:
-Al presionar el botón ‘Comenzar ingreso’, solicitar mediante prompt todos los números que el usuario quiera, 
+Al presionar el botón ‘Comenzar ingreso’, solicitar mediante prompt todos los números que el 
+usuario quiera, 
 hasta que presione el botón Cancelar (en el prompt) o el usuario ingrese cero. 
 Calcular la suma acumulada de los positivos y multiplicar los negativos. 
 Luego informar los resultados en las cajas de texto txt_suma_acumulada y txt_producto
@@ -36,7 +37,23 @@ class App(customtkinter.CTk):
 
 
     def btn_comenzar_ingreso_on_click(self):
-        pass
+        suma_total_positivos = 0
+        multiplicacion_negativos = 1
+
+        while(True):
+            numero_ingresado = prompt("mensaje", "ingrese un numero")
+            if(numero_ingresado == None or numero_ingresado == 0):
+                break
+            numero_ingresado = int(numero_ingresado)
+            if(numero_ingresado >= 1):
+                suma_total_positivos = numero_ingresado + suma_total_positivos
+            elif(numero_ingresado <= -1):
+                multiplicacion_negativos = multiplicacion_negativos * numero_ingresado
+        
+        self.txt_suma_acumulada.delete(0, "end")
+        self.txt_suma_acumulada.insert(0, suma_total_positivos)
+        self.txt_producto.delete(0, "end")
+        self.txt_producto.insert(0, multiplicacion_negativos)
 
     
 if __name__ == "__main__":

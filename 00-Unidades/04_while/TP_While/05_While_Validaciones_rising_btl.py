@@ -5,8 +5,8 @@ from tkinter.simpledialog import askstring as prompt
 import customtkinter
 
 '''
-nombre:
-apellido:
+nombre: jopnatan
+apellido: quiroga
 ---
 TP: While_validaciones_rising_btl
 ---
@@ -55,10 +55,61 @@ class App(customtkinter.CTk):
         self.btn_validar.grid(row=4, pady=20, columnspan=2, sticky="nsew")
 
     def btn_validar_on_click(self):
-        pass
+        continuar = "s"
 
+        while(continuar == "s"):
+            apellido = prompt("sus datos", "ingrese su apellido")
+            if(apellido == None):
+                break
+
+            edad = prompt("sus datos", "ingrese edad entre 18 y 90 años inclusive")
+            if(edad == None):
+                break
+            edad = int(edad)
+            while(edad < 18 or edad > 90):
+                edad = prompt("edad incorrecta", "reingrese una edad valida")
+                edad = int(edad)
+            
+            estado_civil = prompt("sus datos", "ingrese su estado civil: Soltero/a, Casado/a, Divorciado/a, Viudo/a")
+            if(estado_civil == None):
+                break
+            #estado_civil = prompt("sus datos", "ingrese su estado civil: Soltero, Casado, Divorciado, Viudo")
+            #while(estado_civil != "Soltero" and estado_civil != "Casado" and estado_civil != "Divorciado" and estado_civil != "Viudo"):
+            #        estado_civil = prompt("ingreso de datos", "REingrese su estado civil: Soltero, Casado, Divorciado, Viudo")
+            
+            while(estado_civil not in self.combobox_tipo._values):
+                estado_civil = prompt("error", "reingrese estado civil")
+
+            numero_legajo = prompt("sus datos", " ingrese su numero de 4 cifras, sin ceros a la izquierda")
+            if(numero_legajo == None):
+                break
+            numero_legajo = int(numero_legajo)
+            while(numero_legajo <= 1000 or numero_legajo >= 9999):
+                numero_legajo = prompt("sus datos", "reingrese un numero valido")
+                numero_legajo = int(numero_legajo)
+            
+            continuar = prompt("datos ingresados", "para comenzar con otro ingreso presione la letra S de lo contrario presione la letra N")
+
+        self.txt_apellido.delete(0, "end")
+        self.txt_apellido.insert(0, apellido)
+        
+        self.txt_edad.delete(0, "end")
+        self.txt_edad.insert(0, edad)
+
+        self.combobox_tipo.set(estado_civil)
+
+        self.txt_legajo.delete(0, "end")
+        self.txt_legajo.insert(0, numero_legajo)
+
+            
 
 if __name__ == "__main__":
     app = App()
     app.geometry("300x300")
     app.mainloop()
+
+#while True:
+            #apellido = prompt("mensaje","Ingrese su apellido: ")
+            #if apellido == None:
+             #   break
+            #edad = int(edad)
