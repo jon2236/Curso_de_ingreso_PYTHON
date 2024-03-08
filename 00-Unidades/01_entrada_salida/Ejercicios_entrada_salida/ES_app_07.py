@@ -8,13 +8,36 @@ import customtkinter
 nombre:
 apellido:
 ---
-Ejercicio: entrada_salida_07
----
-Enunciado:
-Al presionar el botón  que corresponde a cada operación (suma, resta, multiplicación, y división), 
-se deberán obtener los valores contenidos en las cajas de texto (txtOperadorA y txtOperadorB), 
-transformarlos en números enteros, realizar dicha operación y luego mostrar el resultado 
-de la misma utilizando el Dialog Alert. Ej: "El resultado de la …… es: 755"  
+Simulacro Turno Mañana
+
+Es la gala de eliminación del Gran Utniano y la producción nos pide un programa para contar los votos de los televidentes y saber cuál será el participante que deberá abandonar la casa más famosa del mundo.
+
+Los participantes en la placa son: Giovanni, Gianni y Esteban. Matias no fue nominado y Renato no está en la placa esta semana por haber ganado la inmunidad.
+
+Cada televidente que vota deberá ingresar:
+
+Nombre del votante
+
+Edad del votante (debe ser mayor a 13)
+
+Género del votante (Masculino, Femenino, Otro)
+
+El nombre del participante a quien le dará el voto negativo (Debe estar en placa)
+
+No se sabe cuántos votos entrarán durante la gala.
+
+Se debe informar al usuario:
+
+    El promedio de edad de las votantes de género Femenino 
+
+    Del votante más viejo, su nombre.
+
+    Nombre del votante más joven qué votó a Gianni.
+
+    Nombre de cada participante y porcentaje de los votos qué recibió.
+
+    El nombre del participante que debe dejar la casa (El que tiene más votos)
+
 '''
 
 class App(customtkinter.CTk):
@@ -49,32 +72,7 @@ class App(customtkinter.CTk):
         self.btn_dividir.grid(row=5, pady=10, columnspan=2, sticky="nsew")
 
     def btn_sumar_on_click(self):
-        numero_1 = int(self.txt_operador_a.get())
-        numero_2 = int(self.txt_operador_b.get())
-
-        resultado = numero_1 + numero_2
-        alert("resultado", "el total es " + str(resultado))
-
-    def btn_restar_on_click(self):
-        numero_1 = int(self.txt_operador_a.get())
-        numero_2 = int(self.txt_operador_b.get())
-
-        resultado = numero_1 - numero_2
-        alert("resultado", "el total es " + str(resultado))
-
-    def btn_multiplicar_on_click(self):
-        numero_1 = int(self.txt_operador_a.get())
-        numero_2 = int(self.txt_operador_b.get())
-
-        resultado = numero_1 * numero_2
-        alert("resultado", "el total es " + str(resultado))
-
-    def btn_dividir_on_click(self):
-        numero_1 = float(self.txt_operador_a.get())
-        numero_2 = float(self.txt_operador_b.get())
-
-        resultado = numero_1 / numero_2
-        alert("resultado", "el total es " + str(resultado))
+        pass
         
 if __name__ == "__main__":
     app = App()
